@@ -13,13 +13,13 @@ const NewTask = (props) => {
   }
 
   const enterTaskHandler = async (taskText) => {
-    sendTaskRequest({
+    await sendTaskRequest({
       url: 'https://fortunaproject-4bcde.firebaseio.com/tasks.json',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: { text: taskText },
+      body: {text: taskText},
     }, createTask.bind(null, taskText));
   };
 
